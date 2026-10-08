@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wolf | فروشگاه عکس دیجیتال</title>
+<meta name="description" content="Wolf: فروشگاه عکس دیجیتال. خرید تک‌به‌تک عکس با کیفیت بالا و بدون واترمارک. Wolf, a digital photography shop: buy high-quality photographs one at a time.">
+<meta property="og:title" content="Wolf">
+<meta property="og:description" content="Digital photographs, one at a time.">
+<meta name="theme-color" content="#faf8f5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf8f5;--card:#ffffff;--ink:#1c1a1f;--rule:#e4e0da;--mute:#6b6670;--soft:#f0ece6;--err:#b00020;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#131114;--card:#1c1a1f;--ink:#f4f1ee;--rule:#33303a;--mute:#a9a4ae;--soft:#242129;--err:#ff8a9b}
+}
+:root[data-theme="dark"]{--paper:#131114;--card:#1c1a1f;--ink:#f4f1ee;--rule:#33303a;--mute:#a9a4ae;--soft:#242129;--err:#ff8a9b}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Vazirmatn',Tahoma,system-ui,sans-serif;font-size:16px;line-height:1.7;font-variant-numeric:tabular-nums}
+img{max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:18px}
+.mute{color:var(--mute)}.small{font-size:.875rem}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.grow{flex:1;min-width:0}
+h1,h2,h3{margin:0;line-height:1.25}
+hr{border:0;border-top:1px solid var(--rule);margin:8px 0}
+
+/* header */
+#hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);box-shadow:0 1px 8px rgba(0,0,0,.08)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-block:10px}
+.icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:0;background:none;cursor:pointer;color:var(--ink)}
+.icon:hover{background:var(--soft)}
+.mark{background:none;border:0;padding:0 4px;cursor:pointer;color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:2.1rem;line-height:1;letter-spacing:-.01em}
+.b-menu{order:1}.mark{order:2}.bar .grow{order:3}.b-lang{order:4}.b-user{order:5}
+.search{order:6;flex:1 1 100%;display:flex;align-items:center;border:2px solid var(--ink);border-radius:999px;background:var(--card);padding:2px 4px 2px 16px;padding-inline:16px 4px}
+.search input{flex:1;min-width:0;border:0;background:none;padding:8px 0;outline:none;width:100%}
+.sbtn{width:38px;height:38px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);display:grid;place-items:center;cursor:pointer;flex:none}
+@media(min-width:760px){
+  .search{order:3;flex:1 1 auto;max-width:620px;margin-inline:16px}
+  .bar .grow{display:none}
+  .b-lang{margin-inline-start:auto}
+}
+
+/* buttons + fields */
+.btn{display:inline-block;background:var(--ink);color:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:11px 26px;font-weight:700;cursor:pointer;text-align:center}
+.btn:hover:not(:disabled){opacity:.86}
+.btn.alt{background:var(--card);color:var(--ink)}
+.btn.alt:hover:not(:disabled){background:var(--soft);opacity:1}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.sm{padding:6px 16px;font-size:.875rem}
+.btn.block{display:block;width:100%;padding:14px 26px;font-size:1.05rem}
+.chip{background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:999px;padding:5px 16px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.link{background:none;border:0;padding:0;cursor:pointer;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+label{display:block;font-weight:500;margin-top:14px;margin-bottom:4px}
+input:not([type="radio"]):not([type="search"]),select,textarea{width:100%;border:1px solid #8e8a93;border-radius:14px;background:var(--card);padding:10px 14px}
+textarea{min-height:76px;resize:vertical}
+fieldset{border:0;padding:0;margin:14px 0 0}
+legend{font-weight:700;padding:0;margin-bottom:6px}
+.err{color:var(--err);font-weight:500;margin:10px 0 0}
+
+/* shop page */
+.crumb{color:var(--mute);font-size:.9rem;padding-top:18px}
+.crumb .link{color:var(--mute);text-decoration:none}
+.crumb .link:hover{text-decoration:underline}
+.shophead{padding-bottom:8px}
+.h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);margin-top:6px}
+html[lang="fa"] .h1{font-family:'Vazirmatn',Tahoma,sans-serif;font-weight:700;font-size:clamp(1.8rem,5vw,2.6rem)}
+.lead{max-width:56ch;margin:8px 0 0}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 14px;margin-top:22px}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{background:none;border:0;padding:0;cursor:pointer;text-align:start}
+.tile .ph{aspect-ratio:3/2;border-radius:16px}
+.tile .tl{font-weight:700;margin-top:8px}
+.tile[aria-pressed="true"] .ph{outline:3px solid var(--ink);outline-offset:2px}
+.resline{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;margin:28px 0 14px;color:var(--mute);font-size:.95rem}
+#gallery{padding-bottom:64px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:26px 18px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:none;border:0;padding:0;text-align:start;cursor:pointer;display:block;width:100%}
+.card .ph{aspect-ratio:1/1;border-radius:16px}
+.card:hover .ph img{opacity:.92}
+.card .ct{margin-top:8px;font-weight:500;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .cp{font-weight:700;margin-top:2px}
+.card .cc{color:var(--mute);font-size:.8rem}
+.empty{padding:50px 0;color:var(--mute)}
+.ph{background:var(--soft);overflow:hidden;position:relative}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.ph.sm{width:84px;flex:none;aspect-ratio:1;border-radius:12px}
+.ph.xs{width:64px;flex:none;aspect-ratio:1;border-radius:10px}
+h2.sec{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:2rem;padding-bottom:8px}
+html[lang="fa"] h2.sec{font-family:'Vazirmatn',Tahoma,sans-serif;font-weight:700;font-size:1.5rem}
+
+/* product page */
+.pp{padding-bottom:48px}
+.ppgrid{display:grid;gap:20px;margin-top:12px}
+@media(min-width:900px){.ppgrid{grid-template-columns:1.35fr 1fr;gap:44px;align-items:start}.ppinfo{position:sticky;top:130px}}
+.ppimg{background:var(--soft);border-radius:0;margin-inline:-18px;display:grid;place-items:center}
+.ppimg img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain}
+@media(min-width:900px){.ppimg{margin-inline:0;border-radius:20px;overflow:hidden}}
+.price{font-size:1.8rem;font-weight:700}
+.price2{font-size:.95rem}
+.ptitle{font-size:1.25rem;font-weight:500;margin-top:8px;line-height:1.5}
+.buyrow{margin-top:16px}
+.buybar{position:sticky;bottom:0;background:var(--paper);padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));margin-top:16px;border-top:1px solid var(--rule)}
+@media(min-width:900px){.buybar{display:none}}
+@media(max-width:899px){.buyrow{display:none}}
+details{border-top:1px solid var(--rule);padding:0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:16px 2px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:9px;height:9px;border:solid var(--ink);border-width:0 2px 2px 0;transform:rotate(45deg);margin-inline-end:6px;transition:transform .15s}
+details[open] summary::after{transform:rotate(-135deg)}
+details .dt{padding:0 2px 18px}
+details ul{margin:8px 0 0;padding-inline-start:20px}
+.shopcard{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:16px;margin-top:22px}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:'Instrument Serif',Georgia,serif;font-size:1.6rem;flex:none}
+.hscroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity}
+.hscroll .card{flex:0 0 44%;max-width:230px;scroll-snap-align:start}
+
+/* dialogs */
+dialog{border:0;background:var(--card);color:var(--ink);padding:0;width:min(600px,94vw);max-height:92vh;overflow:auto;border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog.sheet{margin:0;margin-inline-end:auto;height:100dvh;max-height:100dvh;width:min(360px,88vw);border-radius:0}
+dialog.pop{margin:0;margin-inline-start:auto;margin-top:calc(env(safe-area-inset-top,0px) + 58px);margin-inline-end:8px;width:min(340px,94vw)}
+.dhead{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:sticky;top:0;background:var(--card);z-index:2}
+.dhead h2{font-size:1.2rem}
+.x{background:none;border:0;font-size:2rem;line-height:1;cursor:pointer;padding:0 6px}
+.dbody{padding:0 22px 26px}
+.menu{padding:0 10px 20px;display:flex;flex-direction:column}
+.mi{background:none;border:0;text-align:start;padding:14px 12px;border-radius:12px;cursor:pointer;font-weight:500}
+.mi:hover{background:var(--soft)}
+.who{display:flex;gap:12px;align-items:center;padding:6px 12px 14px;border-bottom:1px solid var(--rule);margin-bottom:6px;overflow-wrap:anywhere}
+.ckitem{display:flex;gap:14px;align-items:center;padding:6px 0 14px;border-bottom:1px solid var(--rule)}
+.ckitem .t{font-weight:700}
+.demo{background:var(--soft);border-radius:12px;padding:10px 14px;margin:14px 0 0;font-size:.875rem}
+.opt{display:flex;gap:12px;align-items:center;border:1px solid var(--rule);border-radius:16px;padding:12px 14px;margin:8px 0 0;cursor:pointer;font-weight:400}
+.opt:has(input:checked){outline:2px solid var(--ink);outline-offset:-2px}
+.opt input{accent-color:var(--ink);width:18px;height:18px;flex:none}
+.opt small{display:block;color:var(--mute)}
+.opt .amt{margin-inline-start:auto;font-weight:700;white-space:nowrap}
+.addr{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.addr code{flex:1;min-width:0;border-radius:12px;padding:9px 12px;overflow-wrap:anywhere;user-select:all;background:var(--soft)}
+.tabs{display:flex;gap:8px;margin-top:6px}
+
+/* orders + admin */
+.page{padding-block:34px 72px}
+.mat{display:block;width:100%;text-align:start;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:18px;padding:16px}
+.order{display:flex;gap:16px;align-items:flex-start;margin-top:16px}
+.order h3{font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:0 18px;color:var(--mute);font-size:.875rem;margin:4px 0 8px}
+.alist{list-style:none;margin:10px 0 0;padding:0}
+.arow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding:12px 0}
+.arow.hid{opacity:.55}
+.scroller{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{text-align:start;padding:8px 10px;border-bottom:1px solid var(--rule);font-size:.875rem}
+th{border-bottom-color:var(--ink)}
+.two{display:grid;gap:0 16px}
+@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
+footer{border-top:1px solid var(--rule);padding-block:24px;color:var(--mute);font-size:.875rem;background:var(--soft)}
+
+/* toast */
+#toast{position:fixed;inset:auto;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);margin:0;border:0;border-radius:999px;background:var(--ink);color:var(--paper);padding:10px 22px;max-width:90vw}
+</style>
+</head>
+<body>
+<header id="hdr"></header>
+<main id="app"></main>
+<footer><div class="wrap" id="foot"></div></footer>
+<dialog id="dlg" aria-labelledby="dlg-title"></dialog>
+<div id="toast" popover="manual" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* ================= SETUP: paste your two Supabase values here ================= */
+const CONFIG = {
+  SUPABASE_URL: 'https://hjwnjyzflixdqihipflu.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhqd25qeXpmbGl4ZHFpaGlwZmx1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4OTE1MzAsImV4cCI6MjEwNTQ2NzUzMH0.ZUuZoK0iIumuZmxMw6k54QUgDhf1FSW_xL5kDUO3X-o'
+};
+/* The anon key is meant to be public. NEVER paste the service_role key here. */
+const configured = !CONFIG.SUPABASE_URL.startsWith('PASTE') && !!window.supabase;
+const sb = configured ? window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY) : null;
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('qab:' + k); return v ? JSON.parse(v) : d } catch (e) { return d } },
+  set(k, v) { try { localStorage.setItem('qab:' + k, JSON.stringify(v)); return true } catch (e) { return false } }
+};
+const CATS = ['nature', 'sea', 'city', 'abstract', 'other'];
+
+/* ---------- copy ---------- */
+const T = {
+fa: {
+ nav_shop: 'گالری', nav_orders: 'خریدهای من', nav_admin: 'مدیریت', signin: 'ورود یا ثبت‌نام', signout: 'خروج', langBtn: 'English',
+ hero_h: 'عکس‌های دیجیتال،<br>تک‌به‌تک',
+ hero_p: 'هر عکس قیمت و صفحه‌ی مخصوص خودش را دارد. بعد از پرداخت، فایل اصلی با کیفیت کامل و بدون واترمارک را دانلود می‌کنید.',
+ hero_cta: 'دیدن گالری', gallery: 'گالری', all: 'همه', loading: 'در حال بارگذاری…',
+ cat_nature: 'طبیعت', cat_sea: 'دریا', cat_city: 'شهر', cat_abstract: 'انتزاعی', cat_other: 'سایر',
+ toman: 'تومان', price_ir: 'قیمت به تومان', price_usd: 'قیمت به دلار',
+ empty: 'هنوز عکسی برای نمایش نیست.', buy: 'خرید این عکس', close: 'بستن',
+ wm: 'این پیش‌نمایش واترمارک دارد. فایل خریداری‌شده بدون واترمارک است.',
+ inc: 'شامل فایل اصلی. لینک دانلود برای مدت محدود و تعداد محدود معتبر است.',
+ setup_h: 'اتصال به Supabase انجام نشده', setup_p: 'در ابتدای فایل index.html، آدرس و کلید پروژه‌ی Supabase را جایگزین کنید. راهنما در README است.',
+ ck_title: 'پرداخت', ck_email: 'ایمیل شما', ck_email_h: 'کد سفارش و دانلود با همین ایمیل پیگیری می‌شود.', ck_guest: 'ادامه به‌عنوان مهمان', ck_as: 'خرید با حساب', ck_have: 'حساب دارید؟',
+ ck_method: 'روش پرداخت', m_ir: 'درگاه ایرانی', m_ir_s: 'زرین‌پال، به تومان', m_cr: 'ولت کریپتو', m_cr_s: 'USDT یا بیت‌کوین، برای پرداخت بین‌المللی',
+ ck_next: 'ادامه', ck_back: 'بازگشت', ck_go: 'رفتن به پرداخت', ck_busy: 'لطفاً صبر کنید…',
+ cr_h: 'پرداخت با ولت', cr_coin: 'ارز', cr_send: 'مبلغ را به این آدرس بفرستید', cr_amount: 'مبلغ', cr_eq: 'معادل دلاری، با نرخ لحظه‌ی پرداخت',
+ cr_copy: 'کپی', cr_copied: 'آدرس کپی شد.', cr_check_btn: 'ارسال کردم، بررسی کن',
+ cr_usdt_note: 'دقیقاً همین مبلغ را بفرستید (با همه‌ی رقم‌های اعشار) تا پرداخت شما خودکار شناسایی شود.',
+ cr_btc_note: 'بعد از ارسال، صاحب فروشگاه پرداخت را تأیید می‌کند و لینک دانلود در «خریدهای من» فعال می‌شود.',
+ cr_still: 'هنوز تراکنشی پیدا نشد. چند دقیقه بعد دوباره امتحان کنید.',
+ ok_h: 'پرداخت انجام شد', ok_code: 'کد سفارش', ok_p: 'کد سفارش و ایمیل را نگه دارید. از بخش «خریدهای من» دوباره می‌توانید دانلود کنید.',
+ pay_ok: 'پرداخت انجام شد.', pay_failed: 'پرداخت ناموفق بود یا لغو شد.', pay_invalid: 'بازگشت از درگاه معتبر نبود.',
+ dl: 'دانلود فایل اصلی', dl_left: 'دانلود باقی‌مانده', dl_exp: 'اعتبار تا', dl_none: 'این سفارش دیگر قابل دانلود نیست.', dl_done: 'دانلود شروع شد.',
+ st_paid: 'پرداخت‌شده', st_pending: 'در انتظار پرداخت', st_failed: 'ناموفق', or_expired: 'منقضی شده',
+ or_h: 'خریدهای من', or_lookup_h: 'پیگیری خرید مهمان', or_lookup_p: 'ایمیل و کد سفارش خود را وارد کنید. یا وارد حساب شوید تا همه‌ی خریدها را ببینید.', or_code: 'کد سفارش', or_find: 'پیدا کردن سفارش', or_none: 'سفارشی پیدا نشد.',
+ or_check: 'بررسی پرداخت', or_btc_wait: 'منتظر تأیید صاحب فروشگاه',
+ m_ir_n: 'درگاه ایرانی',
+ au_login: 'ورود', au_reg: 'ثبت‌نام', au_email: 'ایمیل', au_pass: 'گذرواژه (حداقل ۶ نویسه)', au_go_login: 'ورود به حساب', au_go_reg: 'ساخت حساب',
+ au_bad: 'ایمیل یا گذرواژه درست نیست.', au_short: 'گذرواژه باید حداقل ۶ نویسه باشد.', au_bad_email: 'یک ایمیل معتبر وارد کنید.',
+ au_confirm: 'ایمیل تأیید برایتان ارسال شد. بعد از تأیید، وارد شوید.',
+ err_generic: 'مشکلی پیش آمد. دوباره امتحان کنید.', err_gateway_error: 'اتصال به درگاه برقرار نشد.', err_gateway_not_configured: 'درگاه پرداخت هنوز تنظیم نشده است.',
+ err_wallet_not_set: 'آدرس ولت هنوز تنظیم نشده است.', err_bad_email: 'ایمیل معتبر نیست.',
+ ad_h: 'پنل مدیریت', ad_add: 'افزودن عکس', ad_photos: 'عکس‌ها', ad_edit: 'ویرایش', ad_hide: 'حذف از فروشگاه', ad_restore: 'بازگرداندن', ad_hidden: 'مخفی',
+ ad_settings: 'تنظیمات', ad_orders: 'سفارش‌ها', ad_save: 'ذخیره', ad_saved: 'ذخیره شد.', ad_busy: 'در حال ذخیره…',
+ ad_file: 'فایل عکس', ad_file_new: 'جایگزینی عکس (اختیاری)', ad_replace_note: 'خریداران قبلی همچنان نسخه‌ی خودشان را دانلود می‌کنند.',
+ ad_tfa: 'عنوان فارسی', ad_ten: 'عنوان انگلیسی', ad_dfa: 'توضیح فارسی', ad_den: 'توضیح انگلیسی', ad_cat: 'دسته‌بندی', ad_ptoman: 'قیمت (تومان)', ad_pusd: 'قیمت (دلار)',
+ ad_usdt: 'آدرس ولت USDT (TRC20)', ad_btc: 'آدرس ولت بیت‌کوین', ad_dl_hours: 'مدت اعتبار دانلود (ساعت)', ad_dl_limit: 'تعداد دانلود مجاز',
+ ad_need_file: 'یک عکس انتخاب کنید.', ad_need_title: 'عنوان و هر دو قیمت لازم است.', ad_fail: 'ذخیره نشد. دوباره امتحان کنید.',
+ ad_none: 'هنوز سفارشی ثبت نشده است.', ad_confirm: 'تأیید پرداخت', ad_denied: 'این بخش فقط برای مدیر سایت است.',
+ th_code: 'کد', th_email: 'ایمیل', th_photo: 'عکس', th_method: 'روش', th_amount: 'مبلغ', th_status: 'وضعیت', th_date: 'تاریخ',
+ foot: 'فروش تک‌به‌تک عکس دیجیتال',
+ menu: 'منو', account: 'حساب من', search_ph: 'جستجوی عکس', search: 'جستجو', shop_h: 'عکس‌های دیجیتال',
+ shop_p: 'هر عکس قیمت مخصوص خودش را دارد. بعد از پرداخت، فایل اصلی و بدون واترمارک را دانلود می‌کنید.',
+ n_results: 'مورد', clear: 'پاک کردن جستجو',
+ p_details: 'جزئیات عکس', p_policy: 'دانلود و دسترسی', p_about: 'درباره‌ی Wolf',
+ p_about_txt: 'Wolf عکس‌های دیجیتال را تک‌به‌تک می‌فروشد. هر عکس قیمت خودش را دارد و بعد از پرداخت، فایل اصلی و بدون واترمارک در اختیار شما قرار می‌گیرد.',
+ p_more: 'عکس‌های بیشتر از Wolf', p_digital: 'دانلود دیجیتال، بدون ارسال فیزیکی', p_orig: 'فایل اصلی، بدون واترمارک', p_cat: 'دسته‌بندی',
+ p_dl_txt: 'بعد از پرداخت تا {h} ساعت و حداکثر {n} بار می‌توانید فایل را دانلود کنید.',
+ p_notfound: 'این عکس پیدا نشد.', back_gallery: 'بازگشت به گالری'
+},
+en: {
+ nav_shop: 'Gallery', nav_orders: 'My purchases', nav_admin: 'Admin', signin: 'Sign in or register', signout: 'Sign out', langBtn: 'فارسی',
+ hero_h: 'Digital photographs,<br>one at a time',
+ hero_p: 'Every photograph has its own page and its own price. After you pay, you download the full-quality original with no watermark.',
+ hero_cta: 'View the gallery', gallery: 'Gallery', all: 'All', loading: 'Loading…',
+ cat_nature: 'Nature', cat_sea: 'Sea', cat_city: 'City', cat_abstract: 'Abstract', cat_other: 'Other',
+ toman: 'Toman', price_ir: 'Price in Toman', price_usd: 'Price in USD',
+ empty: 'There are no photographs to show yet.', buy: 'Buy this photograph', close: 'Close',
+ wm: 'This preview is watermarked. The file you buy is not.',
+ inc: 'Includes the original file. The download link works for a limited time and a limited number of downloads.',
+ setup_h: 'Supabase is not connected', setup_p: 'Replace the Supabase project URL and key at the top of index.html. The README explains how.',
+ ck_title: 'Checkout', ck_email: 'Your email', ck_email_h: 'You can find your order and download with this email.', ck_guest: 'Continue as guest', ck_as: 'Buying as', ck_have: 'Have an account?',
+ ck_method: 'Payment method', m_ir: 'Iranian gateway', m_ir_s: 'Zarinpal, in Toman', m_cr: 'Crypto wallet', m_cr_s: 'USDT or Bitcoin, for international buyers',
+ ck_next: 'Continue', ck_back: 'Back', ck_go: 'Go to payment', ck_busy: 'Please wait…',
+ cr_h: 'Pay with a wallet', cr_coin: 'Currency', cr_send: 'Send the amount to this address', cr_amount: 'Amount', cr_eq: 'The USD equivalent, at the rate when you pay',
+ cr_copy: 'Copy', cr_copied: 'Address copied.', cr_check_btn: 'I have sent it, check now',
+ cr_usdt_note: 'Send exactly this amount, including every decimal, so your payment is recognised automatically.',
+ cr_btc_note: 'After you send it, the shop owner confirms the payment and the download unlocks under “My purchases”.',
+ cr_still: 'No transaction found yet. Try again in a few minutes.',
+ ok_h: 'Payment complete', ok_code: 'Order code', ok_p: 'Keep your order code and email. You can download again from “My purchases”.',
+ pay_ok: 'Payment complete.', pay_failed: 'The payment failed or was cancelled.', pay_invalid: 'The return from the gateway was not valid.',
+ dl: 'Download original', dl_left: 'Downloads left', dl_exp: 'Valid until', dl_none: 'This order can no longer be downloaded.', dl_done: 'Download started.',
+ st_paid: 'Paid', st_pending: 'Awaiting payment', st_failed: 'Failed', or_expired: 'Expired',
+ or_h: 'My purchases', or_lookup_h: 'Find a guest purchase', or_lookup_p: 'Enter your email and order code. Or sign in to see all your purchases.', or_code: 'Order code', or_find: 'Find order', or_none: 'No order found.',
+ or_check: 'Check payment', or_btc_wait: 'Waiting for the shop owner to confirm',
+ m_ir_n: 'Iranian gateway',
+ au_login: 'Sign in', au_reg: 'Register', au_email: 'Email', au_pass: 'Password (at least 6 characters)', au_go_login: 'Sign in', au_go_reg: 'Create account',
+ au_bad: 'Email or password is incorrect.', au_short: 'The password needs at least 6 characters.', au_bad_email: 'Enter a valid email address.',
+ au_confirm: 'A confirmation email has been sent. Confirm it, then sign in.',
+ err_generic: 'Something went wrong. Please try again.', err_gateway_error: 'Could not reach the payment gateway.', err_gateway_not_configured: 'The payment gateway is not set up yet.',
+ err_wallet_not_set: 'The wallet address is not set up yet.', err_bad_email: 'That email is not valid.',
+ ad_h: 'Admin panel', ad_add: 'Add photograph', ad_photos: 'Photographs', ad_edit: 'Edit', ad_hide: 'Remove from shop', ad_restore: 'Restore', ad_hidden: 'Hidden',
+ ad_settings: 'Settings', ad_orders: 'Orders', ad_save: 'Save', ad_saved: 'Saved.', ad_busy: 'Saving…',
+ ad_file: 'Photo file', ad_file_new: 'Replace photo (optional)', ad_replace_note: 'Earlier buyers still download the version they bought.',
+ ad_tfa: 'Persian title', ad_ten: 'English title', ad_dfa: 'Persian description', ad_den: 'English description', ad_cat: 'Category', ad_ptoman: 'Price (Toman)', ad_pusd: 'Price (USD)',
+ ad_usdt: 'USDT wallet address (TRC20)', ad_btc: 'Bitcoin wallet address', ad_dl_hours: 'Download validity (hours)', ad_dl_limit: 'Downloads allowed',
+ ad_need_file: 'Choose a photo.', ad_need_title: 'A title and both prices are required.', ad_fail: 'Could not save. Please try again.',
+ ad_none: 'No orders yet.', ad_confirm: 'Confirm payment', ad_denied: 'This area is only for the site owner.',
+ th_code: 'Code', th_email: 'Email', th_photo: 'Photo', th_method: 'Method', th_amount: 'Amount', th_status: 'Status', th_date: 'Date',
+ foot: 'Digital photographs, sold one at a time',
+ menu: 'Menu', account: 'My account', search_ph: 'Search photographs', search: 'Search', shop_h: 'Photography',
+ shop_p: 'Every photograph has its own price. After you pay, you download the original file with no watermark.',
+ n_results: 'items', clear: 'Clear search',
+ p_details: 'Photo details', p_policy: 'Download and access', p_about: 'About Wolf',
+ p_about_txt: 'Wolf sells digital photographs one at a time. Each photograph has its own price, and after you pay you get the original file with no watermark.',
+ p_more: 'More from Wolf', p_digital: 'Digital download, nothing is shipped', p_orig: 'Original file, no watermark', p_cat: 'Category',
+ p_dl_txt: 'After you pay, you can download the file for {h} hours, up to {n} times.',
+ p_notfound: 'This photograph was not found.', back_gallery: 'Back to the gallery'
+}};
+let lang = store.get('lang', 'fa'); if (!T[lang]) lang = 'fa';
+const t = k => T[lang][k] ?? k;
+const loc = () => lang === 'fa' ? 'fa-IR' : 'en-US';
+const fmtT = n => `<bdi>${Number(n).toLocaleString(loc())} ${t('toman')}</bdi>`;
+const fmtU = n => `<bdi>$${Number(n).toLocaleString('en-US', { maximumFractionDigits: 3 })}</bdi>`;
+const fmtN = n => Number(n).toLocaleString(loc());
+const fmtDate = ts => ts ? new Date(ts).toLocaleString(lang === 'fa' ? 'fa-IR' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short' }) : '';
+const pt = p => lang === 'fa' ? p.title_fa : p.title_en;
+const pd = p => lang === 'fa' ? p.desc_fa : p.desc_en;
+const ot = o => lang === 'fa' ? o.title_fa : o.title_en;
+const priceMain = p => lang === 'fa' ? fmtT(p.price_toman) : fmtU(p.price_usd);
+const catName = c => t('cat_' + c);
+const mname = m => m === 'zarinpal' ? t('m_ir_n') : m === 'usdt' ? 'USDT (TRC20)' : 'Bitcoin';
+const amt = o => o.method === 'zarinpal' ? fmtT(o.amount) : fmtU(o.amount);
+const previewUrl = p => sb.storage.from('previews').getPublicUrl(p.preview_path).data.publicUrl;
+const canDl = o => o.status === 'paid' && o.expires_at && Date.now() <= new Date(o.expires_at).getTime() && o.downloads_left > 0;
+
+/* ---------- state ---------- */
+let photos = [], settings = { usdt_address: '', btc_address: '', download_hours: 72, download_limit: 3 };
+let session = null, isAdmin = false, view = 'shop', cat = 'all', loading = true, q = '', curId = null;
+let myOrders = [], adminOrders = [], lookup = null, lookupOrders = [];
+let ck = null, authMode = 'login', authErr = '', authInfo = '', afterRender = null;
+const dlg = $('#dlg');
+const ICON = {
+  menu: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>',
+  user: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="currentColor"/></svg>',
+  search: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.4" fill="none"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'
+};
+
+/* ---------- data ---------- */
+async function callFn(name, body) {
+  const { data, error } = await sb.functions.invoke(name, { body });
+  if (!error) return { data };
+  let detail = {}; try { detail = await error.context.json() } catch (e) {}
+  return { error: detail.error || 'generic' };
+}
+async function loadPhotos() {
+  const { data } = await sb.from('photos').select('*').order('created_at', { ascending: false });
+  photos = data || [];
+}
+async function loadSettings() {
+  const { data } = await sb.from('settings').select('*').eq('id', 1).maybeSingle();
+  if (data) settings = data;
+}
+async function refreshUser() {
+  const { data } = await sb.auth.getSession();
+  session = data.session || null; isAdmin = false;
+  if (session) {
+    const { data: a } = await sb.from('admins').select('user_id').eq('user_id', session.user.id).maybeSingle();
+    isAdmin = !!a;
+  }
+}
+async function runLookup() {
+  lookupOrders = [];
+  if (!lookup) return;
+  const r = await callFn('order-access', { action: 'lookup', order_id: lookup.code, email: lookup.email });
+  if (r.data && r.data.order) lookupOrders = [r.data.order];
+}
+async function loadViewData() {
+  if (view === 'orders') {
+    if (session) { const { data } = await sb.from('orders').select('*').order('created_at', { ascending: false }); myOrders = data || [] }
+    else await runLookup();
+  }
+  if (view === 'admin' && isAdmin) {
+    const { data } = await sb.from('orders').select('*').order('created_at', { ascending: false }); adminOrders = data || [];
+  }
+}
+
+/* ---------- toast ---------- */
+let tt;
+function toast(m) { const el = $('#toast'); el.textContent = m; try { el.hidePopover(); el.showPopover() } catch (e) { el.style.display = 'block' } clearTimeout(tt); tt = setTimeout(() => { try { el.hidePopover() } catch (e) { el.style.display = 'none' } }, 3000) }
+
+/* ---------- views ---------- */
+function headerHTML() {
+  return `<div class="wrap bar">
+    <button class="icon b-menu" data-act="menu" aria-label="${t('menu')}">${ICON.menu}</button>
+    <button class="mark" data-act="go" data-id="shop">Wolf</button>
+    <span class="grow"></span>
+    <button class="chip b-lang" data-act="lang" lang="${lang === 'fa' ? 'en' : 'fa'}">${t('langBtn')}</button>
+    <button class="icon b-user" data-act="account" aria-label="${t('account')}">${ICON.user}</button>
+    <div class="search" data-form role="search"><input id="q" type="search" enterkeyhint="search" placeholder="${esc(t('search_ph'))}" aria-label="${esc(t('search_ph'))}" value="${esc(q)}"><button class="sbtn" data-primary data-act="search" aria-label="${t('search')}">${ICON.search}</button></div>
+  </div>`;
+}
+function card(p) {
+  return `<button class="card" data-act="open" data-id="${p.id}"><div class="ph"><img src="${esc(previewUrl(p))}" alt="${esc(pt(p))}" loading="lazy" decoding="async"></div>
+  <div class="ct">${esc(pt(p))}</div><div class="cp">${priceMain(p)}</div></button>`;
+}
+function shopHTML() {
+  const list = photos.filter(p => !p.hidden);
+  const cats = CATS.filter(c => list.some(p => p.category === c));
+  if (cat !== 'all' && !cats.includes(cat)) cat = 'all';
+  const ql = q.toLowerCase();
+  const shown = list.filter(p => (cat === 'all' || p.category === cat) && (!ql || [p.title_fa, p.title_en, p.desc_fa, p.desc_en].join(' ').toLowerCase().includes(ql)));
+  const tiles = cats.length > 1 ? `<div class="tiles">${cats.map(c => { const cover = list.find(p => p.category === c); return `<button class="tile" data-act="cat" data-id="${c}" aria-pressed="${c === cat}"><div class="ph"><img src="${esc(previewUrl(cover))}" alt="" loading="lazy"></div><div class="tl">${catName(c)}</div></button>` }).join('')}</div>` : '';
+  return `<section class="wrap shophead"><div class="crumb">${t('nav_shop')} / ${cat === 'all' ? t('all') : catName(cat)}</div>
+    <h1 class="h1">${t('shop_h')}</h1><p class="mute lead">${t('shop_p')}</p>${tiles}</section>
+  <section class="wrap" id="gallery">
+    <div class="resline"><span>${loading ? t('loading') : `${fmtN(shown.length)} ${t('n_results')}${q ? ` · <bdi>${esc(q)}</bdi>` : ''}`}</span>
+      <span>${q ? `<button class="link" data-act="clear-search">${t('clear')}</button>` : ''} ${cat !== 'all' ? `<button class="link" data-act="cat" data-id="all">${t('all')}</button>` : ''}</span></div>
+    ${loading ? '' : shown.length ? `<div class="grid">${shown.map(card).join('')}</div>` : `<p class="empty">${t('empty')}</p>`}
+  </section>`;
+}
+function photoHTML() {
+  if (loading) return `<section class="wrap page"><p class="empty">${t('loading')}</p></section>`;
+  const p = photos.find(x => x.id === curId);
+  if (!p) return `<section class="wrap page"><p class="empty">${t('p_notfound')}</p><button class="btn alt" data-act="go" data-id="shop">${t('back_gallery')}</button></section>`;
+  const others = photos.filter(x => x.id !== p.id && !x.hidden).slice(0, 10);
+  const second = lang === 'fa' ? fmtU(p.price_usd) : fmtT(p.price_toman);
+  const dl = t('p_dl_txt').replace('{h}', fmtN(settings.download_hours)).replace('{n}', fmtN(settings.download_limit));
+  return `<section class="wrap pp">
+    <nav class="crumb" aria-label="Breadcrumb"><button class="link" data-act="go" data-id="shop">${t('nav_shop')}</button> / <button class="link" data-act="cat-go" data-id="${p.category}">${catName(p.category)}</button></nav>
+    <div class="ppgrid">
+      <div class="ppimg"><img src="${esc(previewUrl(p))}" alt="${esc(pt(p))}"></div>
+      <div class="ppinfo">
+        <div class="price">${priceMain(p)}</div><div class="price2 mute">${second}</div>
+        <h1 class="ptitle">${esc(pt(p))}</h1>
+        <p class="mute small">${t('wm')}</p>
+        <div class="buyrow"><button class="btn block" data-act="buy" data-id="${p.id}">${t('buy')}</button></div>
+        <div style="margin-top:22px">
+          <details open><summary>${t('p_details')}</summary><div class="dt">${pd(p) ? `<p style="margin:0 0 8px">${esc(pd(p))}</p>` : ''}<ul><li>${t('p_digital')}</li><li>${t('p_orig')}</li><li>${t('p_cat')}: ${catName(p.category)}</li></ul></div></details>
+          <details><summary>${t('p_policy')}</summary><div class="dt">${dl}</div></details>
+        </div>
+        <div class="shopcard"><div class="avatar" aria-hidden="true">W</div><div><b>${t('p_about')}</b><p class="mute small" style="margin:4px 0 0">${t('p_about_txt')}</p></div></div>
+      </div>
+    </div>
+    ${others.length ? `<h2 class="sec" style="margin-top:40px">${t('p_more')}</h2><div class="hscroll">${others.map(card).join('')}</div>` : ''}
+    <div class="buybar"><button class="btn block" data-act="buy" data-id="${p.id}">${t('buy')} · ${priceMain(p)}</button></div>
+  </section>`;
+}
+function orderRow(o, guestEmail) {
+  const p = photos.find(x => x.id === o.photo_id);
+  const stLabel = o.status === 'paid' ? t('st_paid') : o.status === 'failed' ? t('st_failed') : t('st_pending');
+  let action = '';
+  if (o.status === 'paid') {
+    action = `<div class="small">${t('dl_left')}: <b>${o.downloads_left}</b> &nbsp; ${o.expires_at && Date.now() > new Date(o.expires_at).getTime() ? `<b>${t('or_expired')}</b>` : `${t('dl_exp')} ${fmtDate(o.expires_at)}`}</div>
+      <div class="row"><button class="btn sm" data-act="dl" data-id="${esc(o.id)}" data-email="${esc(guestEmail || o.email)}" ${canDl(o) ? '' : 'disabled'}>${t('dl')}</button></div>`;
+  } else if (o.status === 'pending') {
+    action = o.method === 'usdt'
+      ? `<div class="row"><button class="btn sm alt" data-act="check-order" data-id="${esc(o.id)}">${t('or_check')}</button></div>`
+      : o.method === 'btc' ? `<p class="small mute">${t('or_btc_wait')}</p>` : '';
+  }
+  return `<article class="mat order"><div class="ph sm">${p ? `<img src="${esc(previewUrl(p))}" alt="" loading="lazy">` : ''}</div>
+  <div class="grow"><h3>${esc(ot(o))}</h3>
+  <div class="meta"><bdi>${esc(o.id)}</bdi><span>${fmtDate(o.created_at)}</span><span>${mname(o.method)}</span><span>${amt(o)}</span><span>${stLabel}</span></div>${action}</div></article>`;
+}
+function ordersHTML() {
+  let list = [], guest = '';
+  if (session) list = myOrders;
+  else {
+    guest = `<div class="mat" style="cursor:default;max-width:560px;margin-top:22px" data-form><h3>${t('or_lookup_h')}</h3><p class="mute small">${t('or_lookup_p')}</p>
+      <label for="lk-e">${t('au_email')}</label><input id="lk-e" type="email" autocomplete="email" value="${esc(lookup?.email || '')}">
+      <label for="lk-c">${t('or_code')}</label><input id="lk-c" dir="ltr" value="${esc(lookup?.code || '')}" placeholder="WF-XXXXXX">
+      <div class="row"><button class="btn" data-primary data-act="lookup">${t('or_find')}</button><button class="btn alt" data-act="auth">${t('signin')}</button></div></div>`;
+    list = lookupOrders;
+  }
+  return `<section class="wrap page"><h2 class="sec">${t('or_h')}</h2>${guest}
+    ${list.length ? list.map(o => orderRow(o, session ? '' : lookup?.email)).join('') : ((session || lookup) ? `<p class="empty">${t('or_none')}</p>` : '')}</section>`;
+}
+function adminHTML() {
+  if (!isAdmin) return `<section class="wrap page"><h2 class="sec">${t('ad_h')}</h2><p class="mute">${t('ad_denied')}</p></section>`;
+  const rows = photos.map(p => `<li class="arow ${p.hidden ? 'hid' : ''}"><div class="ph xs"><img src="${esc(previewUrl(p))}" alt=""></div>
+    <div class="grow"><b>${esc(pt(p))}</b><div class="meta" style="margin:0"><span>${catName(p.category)}</span><span>${fmtT(p.price_toman)}</span><span>${fmtU(p.price_usd)}</span>${p.hidden ? `<span>${t('ad_hidden')}</span>` : ''}</div></div>
+    <button class="btn alt sm" data-act="edit" data-id="${p.id}">${t('ad_edit')}</button>
+    <button class="btn alt sm" data-act="${p.hidden ? 'restore' : 'hide'}" data-id="${p.id}">${p.hidden ? t('ad_restore') : t('ad_hide')}</button></li>`).join('');
+  const ord = adminOrders.length ? `<div class="scroller"><table><thead><tr><th>${t('th_code')}</th><th>${t('th_email')}</th><th>${t('th_photo')}</th><th>${t('th_method')}</th><th>${t('th_amount')}</th><th>${t('th_status')}</th><th>${t('th_date')}</th></tr></thead><tbody>${adminOrders.map(o => `<tr><td><bdi>${esc(o.id)}</bdi></td><td><bdi>${esc(o.email)}</bdi></td><td>${esc(ot(o))}</td><td>${mname(o.method)}</td><td>${amt(o)}</td><td>${o.status === 'paid' ? t('st_paid') : o.status === 'failed' ? t('st_failed') : `${t('st_pending')} ${o.method !== 'zarinpal' ? `<button class="btn sm alt" data-act="admin-confirm" data-id="${esc(o.id)}">${t('ad_confirm')}</button>` : ''}`}</td><td>${fmtDate(o.created_at)}</td></tr>`).join('')}</tbody></table></div>` : `<p class="mute">${t('ad_none')}</p>`;
+  return `<section class="wrap page"><h2 class="sec">${t('ad_h')}</h2>
+    <div class="row"><button class="btn" data-act="edit" data-id="new">${t('ad_add')}</button></div>
+    <h3 style="margin-top:34px">${t('ad_photos')}</h3><ul class="alist">${rows}</ul>
+    <h3 style="margin-top:38px">${t('ad_settings')}</h3><div style="max-width:560px" data-form>
+      <label for="s-usdt">${t('ad_usdt')}</label><input id="s-usdt" dir="ltr" value="${esc(settings.usdt_address)}">
+      <label for="s-btc">${t('ad_btc')}</label><input id="s-btc" dir="ltr" value="${esc(settings.btc_address)}">
+      <div class="two"><div><label for="s-hours">${t('ad_dl_hours')}</label><input id="s-hours" type="number" min="1" value="${settings.download_hours}"></div><div><label for="s-limit">${t('ad_dl_limit')}</label><input id="s-limit" type="number" min="1" value="${settings.download_limit}"></div></div>
+      <div class="row"><button class="btn" data-primary data-act="save-settings">${t('ad_save')}</button></div></div>
+    <h3 style="margin-top:38px">${t('ad_orders')}</h3>${ord}</section>`;
+}
+function setupHTML() { return `<section class="wrap page"><h2 class="sec">${t('setup_h')}</h2><p class="lead">${t('setup_p')}</p></section>` }
+function render() {
+  document.documentElement.lang = lang; document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+  document.title = lang === 'fa' ? 'Wolf | فروشگاه عکس دیجیتال' : 'Wolf | Digital photography';
+  $('#hdr').innerHTML = headerHTML();
+  $('#app').innerHTML = !configured ? setupHTML() : view === 'shop' ? shopHTML() : view === 'photo' ? photoHTML() : view === 'orders' ? ordersHTML() : adminHTML();
+  $('#foot').textContent = `Wolf · ${t('foot')} · ${new Date().getFullYear()}`;
+  if (afterRender) { const f = afterRender; afterRender = null; f() }
+}
+
+/* ---------- dialogs ---------- */
+function openDlg(html, cls = '') { dlg.className = cls; dlg.innerHTML = html; if (!dlg.open) dlg.showModal() }
+const dhead = title => `<div class="dhead"><h2 id="dlg-title">${title}</h2><button class="x" data-act="close" aria-label="${t('close')}">×</button></div>`;
+
+/* ---------- checkout ---------- */
+function openCheckout(pid) {
+  ck = { pid, step: session ? 'method' : 'email', email: session ? session.user.email : '', method: 'zarinpal', coin: 'usdt', err: '', msg: '', busy: false, order: null };
+  renderCk();
+}
+function dlBlock(o, email) {
+  return `<p class="small">${t('dl_left')}: <b>${o.downloads_left}</b> &nbsp; ${t('dl_exp')} ${fmtDate(o.expires_at)}</p>
+  <div class="row"><button class="btn" data-act="dl" data-id="${esc(o.id)}" data-email="${esc(email)}" ${canDl(o) ? '' : 'disabled'}>${t('dl')}</button><button class="btn alt" data-act="go" data-id="orders">${t('nav_orders')}</button></div>`;
+}
+function renderCk() {
+  if (!ck) return;
+  const p = photos.find(x => x.id === ck.pid); if (!p) return;
+  const errLine = ck.err ? `<p class="err" role="alert">${ck.err}</p>` : '';
+  let body = '';
+  if (ck.step === 'email') {
+    body = `<div data-form><label for="ck-email">${t('ck_email')}</label><input id="ck-email" type="email" inputmode="email" autocomplete="email" value="${esc(ck.email)}"><p class="mute small">${t('ck_email_h')}</p>${errLine}
+    <div class="row"><button class="btn" data-primary data-act="ck-email">${t('ck_guest')}</button></div>
+    <p class="small">${t('ck_have')} <button class="link" data-act="auth">${t('signin')}</button></p></div>`;
+  } else if (ck.step === 'method') {
+    body = `<div data-form><p class="small mute">${session ? t('ck_as') + ' ' : ''}<bdi>${esc(ck.email)}</bdi></p>
+    <fieldset><legend>${t('ck_method')}</legend>
+    <label class="opt"><input type="radio" name="m" value="zarinpal" ${ck.method === 'zarinpal' ? 'checked' : ''}><span><b>${t('m_ir')}</b><small>${t('m_ir_s')}</small></span><span class="amt">${fmtT(p.price_toman)}</span></label>
+    <label class="opt"><input type="radio" name="m" value="crypto" ${ck.method === 'crypto' ? 'checked' : ''}><span><b>${t('m_cr')}</b><small>${t('m_cr_s')}</small></span><span class="amt">${fmtU(p.price_usd)}</span></label>
+    <label for="coin">${t('cr_coin')}</label><select id="coin"><option value="usdt" ${ck.coin === 'usdt' ? 'selected' : ''}>USDT (TRC20)</option><option value="btc" ${ck.coin === 'btc' ? 'selected' : ''}>Bitcoin (BTC)</option></select></fieldset>${errLine}
+    <div class="row">${session ? '' : `<button class="btn alt" data-act="ck-back">${t('ck_back')}</button>`}<button class="btn" data-primary data-act="ck-method" ${ck.busy ? 'disabled' : ''}>${ck.busy ? t('ck_busy') : t('ck_go')}</button></div></div>`;
+  } else if (ck.step === 'crypto') {
+    const o = ck.order, usdt = o.method === 'usdt';
+    body = `<h3 style="margin-top:18px">${t('cr_h')} <span class="mute small"><bdi>${usdt ? 'USDT (TRC20)' : 'Bitcoin (BTC)'}</bdi></span></h3>
+    <p>${t('ok_code')}: <b dir="ltr">${esc(o.order_id)}</b></p>
+    <p>${t('cr_amount')}: <b>${fmtU(o.amount)}</b>${usdt ? '' : `<br><span class="mute small">${t('cr_eq')}</span>`}</p>
+    <p class="demo">${usdt ? t('cr_usdt_note') : t('cr_btc_note')}</p>
+    <p class="small" style="margin-bottom:6px">${t('cr_send')}</p><div class="addr"><code dir="ltr">${esc(o.address)}</code><button class="btn alt" data-act="cr-copy">${t('cr_copy')}</button></div>
+    ${ck.msg ? `<p role="status" class="small">${ck.msg}</p>` : ''}
+    <div class="row">${usdt ? `<button class="btn" data-act="ck-check" ${ck.busy ? 'disabled' : ''}>${ck.busy ? t('ck_busy') : t('cr_check_btn')}</button>` : `<button class="btn" data-act="go" data-id="orders">${t('nav_orders')}</button>`}</div>`;
+  } else if (ck.step === 'ok') {
+    body = `<h3 style="margin-top:18px">${t('ok_h')}</h3><p>${t('ok_code')}: <b dir="ltr">${esc(ck.order.id)}</b></p><p class="small mute">${t('ok_p')}</p>${dlBlock(ck.order, ck.email)}`;
+  }
+  const item = `<div class="ckitem"><div class="ph sm"><img src="${esc(previewUrl(p))}" alt=""></div><div><div class="t">${esc(pt(p))}</div><div>${priceMain(p)}</div></div></div>`;
+  openDlg(`${dhead(t('ck_title'))}<div class="dbody">${item}${body}</div>`);
+}
+const errText = code => T[lang]['err_' + code] || t('err_generic');
+
+async function startPayment() {
+  const radio = document.querySelector('input[name=m]:checked');
+  const isCrypto = radio && radio.value === 'crypto';
+  ck.method = isCrypto ? 'crypto' : 'zarinpal'; ck.coin = $('#coin').value; ck.err = ''; ck.busy = true; renderCk();
+  const r = await callFn('create-order', { photo_id: ck.pid, email: ck.email, method: isCrypto ? ck.coin : 'zarinpal' });
+  ck.busy = false;
+  if (r.error) { ck.err = errText(r.error); renderCk(); return }
+  store.set('last', { id: r.data.order_id, email: ck.email.toLowerCase() });
+  if (!isCrypto) { window.location.href = r.data.payment_url; return }
+  ck.order = r.data; ck.step = 'crypto'; renderCk();
+}
+async function checkCrypto(orderId, fromDialog) {
+  if (fromDialog) { ck.busy = true; ck.msg = ''; renderCk() }
+  const r = await callFn('check-crypto', { order_id: orderId });
+  if (r.data && r.data.status === 'paid') {
+    if (fromDialog && ck) {
+      const l = await callFn('order-access', { action: 'lookup', order_id: orderId, email: ck.email });
+      if (l.data && l.data.order) { ck.order = l.data.order; ck.step = 'ok'; ck.busy = false; renderCk() }
+    }
+    toast(t('pay_ok'));
+  } else {
+    if (fromDialog && ck) { ck.busy = false; ck.msg = t('cr_still'); renderCk() } else toast(t('cr_still'));
+  }
+  if (view === 'orders') { await loadViewData(); render() }
+}
+async function download(orderId, email) {
+  const r = await callFn('order-access', { action: 'download', order_id: orderId, email });
+  if (r.error || !r.data || !r.data.url) { toast(t('dl_none')); return }
+  const a = document.createElement('a'); a.href = r.data.url; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove();
+  toast(t('dl_done'));
+  if (ck && ck.step === 'ok' && ck.order) { ck.order.downloads_left = r.data.downloads_left; renderCk() }
+  if (view === 'orders') { await loadViewData(); render() }
+}
+
+/* ---------- auth ---------- */
+function renderAuth() {
+  openDlg(`${dhead(authMode === 'login' ? t('au_login') : t('au_reg'))}<div class="dbody" data-form>
+  <div class="tabs"><button class="chip" data-act="auth-mode" data-id="login" aria-pressed="${authMode === 'login'}">${t('au_login')}</button><button class="chip" data-act="auth-mode" data-id="reg" aria-pressed="${authMode === 'reg'}">${t('au_reg')}</button></div>
+  <label for="au-e">${t('au_email')}</label><input id="au-e" type="email" autocomplete="email" inputmode="email">
+  <label for="au-p">${t('au_pass')}</label><input id="au-p" type="password" autocomplete="${authMode === 'login' ? 'current-password' : 'new-password'}">
+  ${authErr ? `<p class="err" role="alert">${authErr}</p>` : ''}${authInfo ? `<p role="status">${authInfo}</p>` : ''}
+  <div class="row"><button class="btn" data-primary data-act="auth-go">${authMode === 'login' ? t('au_go_login') : t('au_go_reg')}</button></div></div>`);
+}
+async function authGo() {
+  const email = $('#au-e').value.trim().toLowerCase(), pw = $('#au-p').value;
+  authErr = ''; authInfo = '';
+  if (!/^\S+@\S+\.\S+$/.test(email)) authErr = t('au_bad_email');
+  else if (pw.length < 6) authErr = t('au_short');
+  else if (authMode === 'reg') {
+    const { data, error } = await sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: location.origin + location.pathname } });
+    if (error) authErr = error.message;
+    else if (!data.session) authInfo = t('au_confirm');
+  } else {
+    const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+    if (error) authErr = t('au_bad');
+  }
+  if (authErr || authInfo) { renderAuth(); $('#au-e').value = email; return }
+  await refreshUser(); await loadPhotos();
+  if (ck) { ck.email = session.user.email; ck.step = 'method'; renderCk() }
+  else { dlg.close(); if (isAdmin) { acts.go('admin'); return } }
+  await loadViewData(); render();
+}
+
+/* ---------- admin ---------- */
+function openEdit(id) {
+  const p = id === 'new' ? null : photos.find(x => x.id === id);
+  openDlg(`${dhead(p ? t('ad_edit') : t('ad_add'))}<div class="dbody" data-form>
+  ${p ? `<div class="ph sm" style="margin-top:14px"><img src="${esc(previewUrl(p))}" alt=""></div>` : ''}
+  <label for="f-file">${p ? t('ad_file_new') : t('ad_file')}</label><input id="f-file" type="file" accept="image/*">${p ? `<p class="mute small">${t('ad_replace_note')}</p>` : ''}
+  <div class="two"><div><label for="f-tfa">${t('ad_tfa')}</label><input id="f-tfa" value="${esc(p?.title_fa)}"></div><div><label for="f-ten">${t('ad_ten')}</label><input id="f-ten" dir="ltr" value="${esc(p?.title_en)}"></div></div>
+  <label for="f-dfa">${t('ad_dfa')}</label><textarea id="f-dfa">${esc(p?.desc_fa)}</textarea>
+  <label for="f-den">${t('ad_den')}</label><textarea id="f-den" dir="ltr">${esc(p?.desc_en)}</textarea>
+  <label for="f-cat">${t('ad_cat')}</label><select id="f-cat">${CATS.map(c => `<option value="${c}" ${p?.category === c ? 'selected' : ''}>${catName(c)}</option>`).join('')}</select>
+  <div class="two"><div><label for="f-pt">${t('ad_ptoman')}</label><input id="f-pt" type="number" min="1" step="1000" inputmode="numeric" value="${p ? p.price_toman : ''}"></div><div><label for="f-pu">${t('ad_pusd')}</label><input id="f-pu" type="number" min="0.5" step="0.5" inputmode="decimal" value="${p ? p.price_usd : ''}"></div></div>
+  <p class="err" id="f-err" role="alert"></p>
+  <div class="row"><button class="btn alt" data-act="close">${t('close')}</button><button class="btn" data-primary data-act="save-photo" data-id="${id}">${t('ad_save')}</button></div></div>`);
+}
+async function makePreview(file, max = 1400) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url });
+    const k = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight)), w = Math.round(img.naturalWidth * k), h = Math.round(img.naturalHeight * k);
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    const x = c.getContext('2d'); x.drawImage(img, 0, 0, w, h);
+    x.save(); x.translate(w / 2, h / 2); x.rotate(-Math.PI / 6);
+    x.font = `700 ${Math.max(16, w / 24)}px sans-serif`; x.textAlign = 'center'; x.fillStyle = 'rgba(255,255,255,.36)'; x.strokeStyle = 'rgba(0,0,0,.22)'; x.lineWidth = 1;
+    const step = Math.max(80, w / 6);
+    for (let yy = -h; yy <= h; yy += step * .75) for (let xx = -w; xx <= w; xx += step * 1.7) { x.strokeText('WOLF', xx, yy); x.fillText('WOLF', xx, yy) }
+    x.restore();
+    return await new Promise((res, rej) => c.toBlob(b => b ? res(b) : rej(new Error('blob')), 'image/jpeg', .8));
+  } finally { URL.revokeObjectURL(url) }
+}
+async function savePhoto(id) {
+  const g = i => $('#' + i).value.trim(), bad = m => { $('#f-err').textContent = m }, file = $('#f-file').files[0], isNew = id === 'new';
+  const btn = dlg.querySelector('[data-act="save-photo"]');
+  if (isNew && !file) return bad(t('ad_need_file'));
+  const pt_ = +g('f-pt'), pu = +g('f-pu');
+  if (!(g('f-tfa') || g('f-ten')) || !(pt_ > 0) || !(pu > 0)) return bad(t('ad_need_title'));
+  bad(''); btn.disabled = true; btn.textContent = t('ad_busy');
+  try {
+    const p = isNew ? null : photos.find(x => x.id === id);
+    const photoId = isNew ? crypto.randomUUID() : p.id;
+    const tfa = g('f-tfa') || g('f-ten'), ten = g('f-ten') || g('f-tfa'), dfa = g('f-dfa') || g('f-den'), den = g('f-den') || g('f-dfa');
+    const fields = { title_fa: tfa, title_en: ten, desc_fa: dfa, desc_en: den, category: g('f-cat'), price_toman: Math.round(pt_), price_usd: +pu.toFixed(2) };
+    let version = isNew ? 1 : p.current_version, previewPath = p ? p.preview_path : null, origPath = null;
+    if (file) {
+      version = isNew ? 1 : p.current_version + 1;
+      const ext = (file.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg';
+      origPath = `${photoId}/v${version}.${ext}`; previewPath = `${photoId}/v${version}.jpg`;
+      const prev = await makePreview(file);
+      const u1 = await sb.storage.from('originals').upload(origPath, file, { contentType: file.type || 'image/jpeg', upsert: false });
+      if (u1.error) throw u1.error;
+      const u2 = await sb.storage.from('previews').upload(previewPath, prev, { contentType: 'image/jpeg', upsert: false });
+      if (u2.error) throw u2.error;
+    }
+    if (isNew) {
+      const a = await sb.from('photos').insert({ id: photoId, ...fields, current_version: 1, preview_path: previewPath }); if (a.error) throw a.error;
+      const b = await sb.from('photo_versions').insert({ photo_id: photoId, version: 1, original_path: origPath }); if (b.error) throw b.error;
+    } else {
+      if (file) { const b = await sb.from('photo_versions').insert({ photo_id: photoId, version, original_path: origPath }); if (b.error) throw b.error }
+      const a = await sb.from('photos').update({ ...fields, current_version: version, preview_path: previewPath }).eq('id', photoId); if (a.error) throw a.error;
+    }
+    await loadPhotos(); dlg.close(); render(); toast(t('ad_saved'));
+  } catch (e) {
+    bad(t('ad_fail') + (e && e.message ? ' (' + e.message + ')' : '')); btn.disabled = false; btn.textContent = t('ad_save');
+  }
+}
+
+/* ---------- actions ---------- */
+const acts = {
+  go(id) { if (dlg.open) dlg.close(); const h = id === 'shop' ? '#/' : '#/' + id; if ((location.hash || '#/') === h) route(); else location.hash = h },
+  lang() { lang = lang === 'fa' ? 'en' : 'fa'; store.set('lang', lang); if (dlg.open) dlg.close(); render() },
+  scroll() { $('#gallery').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }) },
+  cat(id) { cat = (cat === id && id !== 'all') ? 'all' : id; render(); const g = $('#gallery'); if (g) g.scrollIntoView({ block: 'start' }) },
+  'cat-go'(id) { if (dlg.open) dlg.close(); cat = id; q = ''; acts.go('shop') },
+  open(id) { location.hash = '#/p/' + id },
+  search() { q = $('#q').value.trim(); cat = 'all'; afterRender = () => { const g = $('#gallery'); if (g) g.scrollIntoView({ block: 'start' }) }; acts.go('shop') },
+  'clear-search'() { q = ''; cat = 'all'; render() },
+  menu() {
+    const list = photos.filter(p => !p.hidden), cats = CATS.filter(c => list.some(p => p.category === c));
+    openDlg(`${dhead('Wolf')}<nav class="menu"><button class="mi" data-act="cat-go" data-id="all">${t('all')}</button>${cats.map(c => `<button class="mi" data-act="cat-go" data-id="${c}">${catName(c)}</button>`).join('')}<hr><button class="mi" data-act="go" data-id="orders">${t('nav_orders')}</button>${isAdmin ? `<button class="mi" data-act="go" data-id="admin">${t('nav_admin')}</button>` : ''}</nav>`, 'sheet');
+  },
+  account() {
+    if (!session) { acts.auth(); return }
+    openDlg(`${dhead(t('account'))}<div class="menu"><div class="who"><span class="avatar" aria-hidden="true">${esc(session.user.email[0].toUpperCase())}</span><bdi>${esc(session.user.email)}</bdi></div><button class="mi" data-act="go" data-id="orders">${t('nav_orders')}</button>${isAdmin ? `<button class="mi" data-act="go" data-id="admin">${t('nav_admin')}</button>` : ''}<button class="mi" data-act="signout">${t('signout')}</button></div>`, 'pop');
+  },
+  close() { dlg.close() },
+  buy(id) { openCheckout(id) },
+  'ck-email'() {
+    const e = $('#ck-email').value.trim().toLowerCase(); ck.email = e;
+    if (!/^\S+@\S+\.\S+$/.test(e)) { ck.err = t('err_bad_email'); renderCk(); $('#ck-email').focus(); return }
+    ck.err = ''; ck.step = 'method'; renderCk();
+  },
+  'ck-method'() { startPayment() },
+  'ck-back'() { ck.step = 'email'; ck.err = ''; renderCk() },
+  'ck-check'() { checkCrypto(ck.order.order_id, true) },
+  async 'cr-copy'() { const a = ck.order.address; try { await navigator.clipboard.writeText(a); toast(t('cr_copied')) } catch (e) { const c = dlg.querySelector('code'); if (c) { const r = document.createRange(); r.selectNodeContents(c); const s = getSelection(); s.removeAllRanges(); s.addRange(r) } } },
+  dl(id, b) { download(id, b.dataset.email) },
+  'check-order'(id) { checkCrypto(id, false) },
+  auth() { authMode = 'login'; authErr = ''; authInfo = ''; renderAuth() },
+  'auth-mode'(id) { authMode = id; authErr = ''; authInfo = ''; renderAuth() },
+  'auth-go'() { authGo() },
+  async signout() { if (dlg.open) dlg.close(); await sb.auth.signOut(); session = null; isAdmin = false; myOrders = []; adminOrders = []; await loadPhotos(); if (view === 'admin') { acts.go('shop') } else { await loadViewData(); render() } },
+  async lookup() { lookup = { email: $('#lk-e').value.trim().toLowerCase(), code: $('#lk-c').value.trim().toUpperCase() }; await runLookup(); render() },
+  edit(id) { openEdit(id) },
+  'save-photo'(id) { savePhoto(id) },
+  async hide(id) { await sb.from('photos').update({ hidden: true }).eq('id', id); await loadPhotos(); render() },
+  async restore(id) { await sb.from('photos').update({ hidden: false }).eq('id', id); await loadPhotos(); render() },
+  async 'save-settings'() {
+    const patch = { usdt_address: $('#s-usdt').value.trim(), btc_address: $('#s-btc').value.trim(), download_hours: Math.max(1, +$('#s-hours').value || 72), download_limit: Math.max(1, +$('#s-limit').value || 3) };
+    const { error } = await sb.from('settings').update(patch).eq('id', 1);
+    if (error) return toast(t('ad_fail'));
+    settings = { ...settings, ...patch }; toast(t('ad_saved'));
+  },
+  async 'admin-confirm'(id) {
+    const now = Date.now();
+    const { error } = await sb.from('orders').update({ status: 'paid', paid_at: new Date(now).toISOString(), expires_at: new Date(now + settings.download_hours * 3600e3).toISOString(), downloads_left: settings.download_limit }).eq('id', id).eq('status', 'pending');
+    if (error) return toast(t('ad_fail'));
+    await loadViewData(); render(); toast(t('ad_saved'));
+  }
+};
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b || b.disabled) return; const f = acts[b.dataset.act]; if (f) f(b.dataset.id, b, e) });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Enter' || !e.target.matches('input:not([type=file])')) return;
+  const box = e.target.closest('[data-form]'); const b = box && box.querySelector('[data-primary]'); if (b) { e.preventDefault(); b.click() }
+});
+dlg.addEventListener('close', () => { ck = null; dlg.className = '' });
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close() });
+
+/* ---------- routing + boot ---------- */
+function parseRoute() {
+  const [a, b] = location.hash.replace(/^#\/?/, '').split('/');
+  if (a === 'p' && b) return { view: 'photo', id: b };
+  if (a === 'orders') return { view: 'orders' };
+  if (a === 'admin') return { view: 'admin' };
+  return { view: 'shop' };
+}
+async function route() {
+  const r = parseRoute(); view = r.view; curId = r.id || null;
+  window.scrollTo(0, 0);
+  await loadViewData(); render();
+}
+(async function boot() {
+  if (!configured) { render(); return }
+  render();
+  await Promise.all([loadPhotos(), loadSettings(), refreshUser()]);
+  loading = false;
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('pay')) {
+    const st = qs.get('pay'), code = qs.get('order'), last = store.get('last', null);
+    if (last && code && last.id === code) lookup = { email: last.email, code };
+    afterRender = () => toast(st === 'ok' ? t('pay_ok') : st === 'failed' ? t('pay_failed') : t('pay_invalid'));
+    history.replaceState(null, '', location.pathname + '#/orders');
+  } else if (isAdmin && !location.hash) history.replaceState(null, '', location.pathname + '#/admin');
+  window.addEventListener('hashchange', route);
+  await route();
+})();
+
+</script>
+</body>
+</html>
